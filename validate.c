@@ -26,7 +26,7 @@ void printOption();
 
 /*
 	This function is a function for printing summary result of each kind of task that had execute
-	- argument 1 which is array of summation in each kind of task
+	- 1 argument which is array of summation in each kind of task
 */
 void printSummary(int catagoryValidateCount[]);
 
@@ -56,32 +56,38 @@ int checkPhones();
 
 /*
 	This function is a validation function of date in forn of dd/MMM/yyy
-	that will check that function is valid or not
+	that will check that string is valid or not
+	- 1 argument which is string that will be check
 */
 void validDates(char stringToValidate[]);
 
 /*
-	This function is a validation function of id that will check that function is valid or not
+	This function is a validation function of id that will check that string is valid or not
+	- 1 argument which is string that will be check
 */
 void validIDs(char stringToValidate[]);
 
 /*
-	This function is a validation function of c identifier that will check that function is valid or not
+	This function is a validation function of c identifier that will check that string is valid or not
+	- 1 argument which is string that will be check
 */
 void validIdentifiers(char stringToValidate[]);
 
 /*
-	This function is a validation function of international phone that will check that function is valid or not
+	This function is a validation function of international phone that will check that string is valid or not
+	- 1 argument which is string that will be check
 */
 void validPhones(char stringToValidate[]);
 
 /*
-	This function
+	This function will check that it's can find space in that string or not
+	- return 1 if find a space, 0 if not find any space in string.
+	- 1 argument which is string that will be check
 */
 int findSpace(char stringToFind[]);
 
 /*
-	This function
+	This function will check that 
 */
 int checkAllDigits(char stringToCheck[]);
 
@@ -214,9 +220,9 @@ int checkDates()
 
 int checkIDs()
 {
-	char terminalInput[32]; /* a variable to get a input from terminal that user input */
-	char stringToValidate[32];	/*  */
-	int roundCounter;	/*  */
+	char terminalInput[32];	/* a variable to get a input from terminal that user input */
+	char stringToValidate[32];	/* a variable for store a string that will use to validated */
+	int roundCounter;	/* a variable that will count haw many times this work had run */
 	roundCounter=0;
 
 	printf("Validate CPE student ID number (Hit return to stop)\n");
@@ -240,9 +246,9 @@ int checkIDs()
 
 int checkIdentifiers()
 {
-	char terminalInput[32]; /* a variable to get a input from terminal that user input */
-	char stringToValidate[32];	/*  */
-	int roundCounter;	/*  */
+	char terminalInput[32];	/* a variable to get a input from terminal that user input */
+	char stringToValidate[32];	/* a variable for store a string that will use to validated */
+	int roundCounter;	/* a variable that will count haw many times this work had run */
 	roundCounter=0;
 
 	printf("Validate a string as a C language identifier (Hit return to stop)\n");
@@ -266,9 +272,9 @@ int checkIdentifiers()
 
 int checkPhones()
 {
-	char terminalInput[32]; /* a variable to get a input from terminal that user input */
-	char stringToValidate[32];	/*  */
-	int roundCounter;	/*  */
+	char terminalInput[32];	/* a variable to get a input from terminal that user input */
+	char stringToValidate[32];	/* a variable for store a string that will use to validated */
+	int roundCounter;	/* a variable that will count haw many times this work had run */
 	roundCounter=0;
 
 	printf("Validate international phone number (Hit return to stop)\n");
@@ -292,8 +298,8 @@ int checkPhones()
 
 void validDates(char stringToValidate[])
 {
-	int inputFormValidation;	/*  */
-	int validationCheck;	/*  */
+	int inputFormValidation;	/* a variable that will hold a input form validation status */
+	int validationCheck;	/* a variable that will hold a date is correct date or not */
 	
 	inputFormValidation = dateInputFormatValidation(stringToValidate);
 
@@ -360,8 +366,8 @@ void validDates(char stringToValidate[])
 
 void validIDs(char stringToValidate[])
 {
-	char yearString[]={stringToValidate[0],stringToValidate[1]};	/*  */
-	int yearInt;	/*  */
+	char yearString[]={stringToValidate[0],stringToValidate[1]};	/* a variable that will hold a year of that ID in string format */
+	int yearInt;	/* a variable that will hold a year of that ID in integer format */
 
 	sscanf(yearString,"%d",&yearInt);
 
@@ -417,11 +423,11 @@ void validIdentifiers(char stringToValidate[])
 
 void validPhones(char stringToValidate[])
 {
-	int currentPositionChecking;	/*  */
-	int checkPlusCode;	/*  */
-	int checkCountryCode;	/*  */
-	int checkCityCode;	/*  */
-	int checkLastCode;	/*  */
+	int currentPositionChecking;	/* a variable that will hold a position that now checking */
+	int checkPlusCode;	/* a variable that will hold a status that is plus exist or not */
+	int checkCountryCode;	/* a variable that will hold a status that country code is valid or not */
+	int checkCityCode;	/* a variable that will hold a status that city code is valid or not */
+	int checkLastCode;	/* a variable that will hold a status that the last code is valid or not */
 
 	currentPositionChecking=0;
 	checkCountryCode=0;
@@ -483,7 +489,7 @@ void validPhones(char stringToValidate[])
 
 int findSpace(char stringToFind[])
 {
-	int spaceChecker;	/*  */
+	int spaceChecker;	/* a variable that will hold status that string is contain space or not */
 	spaceChecker=0;
 	
 	for (int i = 0; i < strlen(stringToFind); ++i)
@@ -499,7 +505,7 @@ int findSpace(char stringToFind[])
 
 int checkAllDigits(char stringToCheck[])
 {
-	int digitChecker;	/*  */
+	int digitChecker;	/* a variable that will hold status that string is contain with all digit or not */
 	digitChecker=1;
 
 	for (int i = 0; i < strlen(stringToCheck); ++i)
@@ -516,7 +522,7 @@ int checkAllDigits(char stringToCheck[])
 
 int checkAllNumberAlphabetUnderscore(char stringToCheck[])
 {
-	int checker;	/*  */
+	int checker;	/* a variable that will hold status that string is contain only number, alphabet and underscore or not */
 	checker=1;
 
 	for (int i = 0; i < strlen(stringToCheck); ++i)
@@ -532,9 +538,9 @@ int checkAllNumberAlphabetUnderscore(char stringToCheck[])
 
 int checkAllNumberDashPlus(char stringToCheck[])
 {
-	int checker;	/*  */
-	int plusQuota;	/*  */
-	int dashQuota;	/*  */
+	int checker;	/* a variable that will hold status that string is contain only number,dash and plus or not */
+	int plusQuota;	/* a variable that will be quota for plus sign in that string */
+	int dashQuota;	/* a variable that will be quota for dash sign in that string */
 	
 	checker=1;
 	plusQuota=1;
@@ -566,8 +572,8 @@ int checkAllNumberDashPlus(char stringToCheck[])
 
 int checkPhoneNumberCodeBySection(char stringToCheck[],int startPosition,int minSizeOfSection,int maxSizeOfSection,char expectedEndingCharacter)
 {
-	int returnCodeStatus;	/*  */
-	int actualSectionSize;	/*  */
+	int returnCodeStatus;	/* a variable that hold a status of that string is valid or not */
+	int actualSectionSize;	/* a variable that will count a size of string section that currently check */
 
 	returnCodeStatus=0;
 	actualSectionSize=0;
@@ -603,7 +609,7 @@ int checkPhoneNumberCodeBySection(char stringToCheck[],int startPosition,int min
 
 int checkAllNumberUpperAlphabetSpace(char stringToCheck[])
 {
-	int checker;	/*  */
+	int checker;	/* a variable that will hold status that string is valid or not */
 	checker=1;
 
 	for (int i = 0; i < strlen(stringToCheck); ++i)
@@ -619,7 +625,7 @@ int checkAllNumberUpperAlphabetSpace(char stringToCheck[])
 
 int checkDaySection(char stringToCheck[])
 {
-	int returnCodeStatus;	/*  */
+	int returnCodeStatus;	/* a variable that will hold status that a string is valid or not */
 	returnCodeStatus=0;
 
 	for (int i = 0; i < 2; ++i)
@@ -648,7 +654,7 @@ int checkDaySection(char stringToCheck[])
 
 int checkMonthSection(char stringToCheck[])
 {
-	int returnCodeStatus;	/*  */
+	int returnCodeStatus;	/* a variable that will hold status that string is valid or not */
 	returnCodeStatus=0;
 
 	for (int i = 3; i < 6; ++i)
@@ -677,7 +683,7 @@ int checkMonthSection(char stringToCheck[])
 
 int checkYearSection(char stringToCheck[])
 {
-	int returnCodeStatus;	/*  */
+	int returnCodeStatus;	/* a variable that will hold status that string is valid or not */
 	returnCodeStatus=0;
 
 	for (int i = 7; i < 11; ++i)
@@ -702,7 +708,7 @@ int checkYearSection(char stringToCheck[])
 
 int dateInputFormatValidation(char stringToValidate[])
 {
-	int returnCodeStatus;	/*  */
+	int returnCodeStatus;	/* a variable that will hold status that string is valid or not */
 	returnCodeStatus=1;	/* no error */
 	if (checkAllNumberUpperAlphabetSpace(stringToValidate)==0)
 	{
@@ -754,12 +760,12 @@ int dateInputFormatValidation(char stringToValidate[])
 
 int dateValidationCheck(char stringToValidate[])
 {
-	int returnCodeStatus;	/*  */
+	int returnCodeStatus;	/* a variable that will hold status that string is valid or not */
 	char monthChecker[12][4]={"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"};	/*  */
-	int monthInt;	/*  */
-	int day;	/*  */
-	char month[4];	/*  */
-	int year;	/*  */
+	int monthInt;	/* a variable to hold month in integer format */
+	int day;	/* a variable to hold day in onteger format */
+	char month[4];	/* a variable to hold month in string format */
+	int year;	/* a variable to hold year in integer format */
 	returnCodeStatus=1;
 	monthInt=0;
 
