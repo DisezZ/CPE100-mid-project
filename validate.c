@@ -87,52 +87,88 @@ void validPhones(char stringToValidate[]);
 int findSpace(char stringToFind[]);
 
 /*
-	This function will check that 
+	This function will check that it's can find only digit in that function or not
+	- return 1 if all character in string is digit, 0 if not
+	- 1 argument which is string that will be checks
 */
 int checkAllDigits(char stringToCheck[]);
 
 /*
-	This function
+	This function will check that it's find only digit, alphabet or underscore in that string or not
+	- return 1 if yes, 0 if not
+	- 1 argument which is string that will be check
 */
 int checkAllNumberAlphabetUnderscore(char stringToCheck[]);
 
 /*
-	This function
+	This function will check that it's find only digit, dash or plus in that string or not 
+	and check that in that string contain 1 of plus sign and 2 of dashes sign or not
+	- return 1 if yes, 0 if not
+	- 1 argument which is string that will be check
 */
 int checkAllNumberDashPlus(char stringToCheck[]);
 
 /*
-	This function
+	This function will check string from the start position to atleast min size of that expected and 
+	maximum at that expected toget and check that section is end by expected character or not
+	- return the size of that section of string if that section is valid.
+		if not, return -1 if it's contain others thing that's not digit or it's size less than minimum expected
+		or, return -2 if it size is greater than maximum expected size
+	- 5 argument:
+		1-string that will be check
+		2-start position that will check of that string
+		3-minimum size that expected that section to be
+		4-maximum size that expected that section to be
+		5-expected character to be at the end of that section
 */
 int checkPhoneNumberCodeBySection(char stringToCheck[],int startPosition,int minSizeOfSection,int maxSizeOfSection,char expectedEndingCharacter);
 
 /*
-	This function
+	This function will check that it's find only digit, uppercase alphabet or space in that string or not
+	- return 1 if yes, 0 if not
+	- 1 argument which is string that will be check
 */
 int checkAllNumberUpperAlphabetSpace(char stringToCheck[]);
 
 /*
-	This function
+	This function will check day section in date string and check it's valid or not
+	- return 0 if yes, return -1 if it's find uppercase character in the day section
+		return -2 if it's find space in day section or find digit after day section instead of space
+		return -3 if it's find uppercase character after the day section instead space
+	- 1 argument which is date string that will be check
 */
 int checkDaySection(char stringToCheck[]);
 
 /*
-	This function
+	This function will check month section in date string and check it's valid or not
+	- return 0 if yes, return -1 if it's find digit in the month section
+		return -2 if it's find space in month section or find uppercase character after day section instead of space
+		return -3 if it's find digit character after the day section instead space
+	- 1 argument which is date string that will be check
 */
 int checkMonthSection(char stringToCheck[]);
 
 /*
-	This function
+	This function will check year section in date string and check it's valid or not
+	- return 0 if yes, return -1 if it's find uppercase character in the day section
+		return -2 if it's find space in day section or find that it's too short or too long for year
+	- 1 argument which is date string that will be check
 */
 int checkYearSection(char stringToCheck[]);
 
 /*
-	This function
+	This function will check that date string is in the correct format or not
+	- return 1 if it's correct format
+		return -1 to -9 if it's not valid
+	- 1 argument which is date string that will be check
 */
 int dateInputFormatValidation(char stringToValidate[]);
 
 /*
-	This function
+	This function will check that date is correct or not
+	- return 1 if it's correct format
+		return -1 to -5 if it's not valid
+	- 1 argument which is date string that will be check
 */
 int dateValidationCheck(char stringToValidate[]);
 
