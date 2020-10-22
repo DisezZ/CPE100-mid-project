@@ -239,7 +239,7 @@ int checkDates()
 
 	while(1)
 	{
-		printf("Enter date: ");
+		printf("\tEnter date: ");
 		fgets(terminalInput,sizeof(terminalInput),stdin);
 		if(terminalInput[0]==NEWLINE)
 		{
@@ -265,7 +265,7 @@ int checkIDs()
 
 	while(1)
 	{
-		printf("Enter ID: ");
+		printf("\tEnter ID: ");
 		fgets(terminalInput,sizeof(terminalInput),stdin);
 		if(terminalInput[0]==NEWLINE)
 		{
@@ -291,7 +291,7 @@ int checkIdentifiers()
 
 	while(1)
 	{
-		printf("Enter C identifier: ");
+		printf("\tEnter C identifier: ");
 		fgets(terminalInput,sizeof(terminalInput),stdin);
 		if(terminalInput[0]==NEWLINE)
 		{
@@ -317,7 +317,7 @@ int checkPhones()
 
 	while(1)
 	{
-		printf("Enter phone number: ");
+		printf("\tEnter phone number: ");
 		fgets(terminalInput,sizeof(terminalInput),stdin);
 		if(terminalInput[0]==NEWLINE)
 		{
@@ -339,6 +339,7 @@ void validDates(char stringToValidate[])
 	
 	inputFormValidation = dateInputFormatValidation(stringToValidate);
 
+	printf("\t\t");
 	switch(inputFormValidation)
 	{
 		case -1:
@@ -407,6 +408,8 @@ void validIDs(char stringToValidate[])
 
 	sscanf(yearString,"%d",&yearInt);
 
+	printf("\t\t");
+
 	if (findSpace(stringToValidate))
 	{
 		printf("Not valid - ID mustn't contain embedded space\n");
@@ -439,6 +442,8 @@ void validIDs(char stringToValidate[])
 
 void validIdentifiers(char stringToValidate[])
 {
+	printf("\t\t");
+
 	if (findSpace(stringToValidate))
 	{
 		printf("Not valid - C Identifier mustn't contain embedded space\n");
@@ -471,6 +476,8 @@ void validPhones(char stringToValidate[])
 	checkLastCode=0;
 	checkPlusCode=1;
 
+	printf("\t\t");
+	
 	if (stringToValidate[0]!='+')
 	{
 		printf("Not valid - Must start with plus\n");
